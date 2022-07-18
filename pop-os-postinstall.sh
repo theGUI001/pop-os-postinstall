@@ -118,17 +118,7 @@ flatpak install flathub com.spotify.Client -y
 flatpak install flathub com.bitwarden.desktop -y
 flatpak install flathub org.telegram.desktop -y
 flatpak install flathub org.qbittorrent.qBittorrent -y
-}
-
-## Instalando Brave ##
-install_brave(){
-
-  echo -e "${VERDE}[INFO] - Instalando o Brave${SEM_COR}"
-
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-sudo apt install brave-browser
+flatpak install flathub com.brave.Browser -y
 }
 
 # -------------------------------------------------------------------------- #
@@ -159,7 +149,6 @@ add_archi386
 just_apt_update
 install_debs
 install_flatpaks
-install_brave
 extra_config
 apt_update
 system_clean
